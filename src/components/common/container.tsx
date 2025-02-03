@@ -7,8 +7,8 @@ type ContainerProps = {
 
 export const Container = ({ children, className }: ContainerProps) => {
   return (
-    <main className={cn(`flex  justify-center items-center w-full`)}>
-      <div className={cn("flex flex-col w-[95%] sm:w-[87%]", className)}>
+    <main className={cn(`flex  justify-center items-center w-full h-full`)}>
+      <div className={cn("flex flex-col w-[92%] sm:w-[94%] h-full", className)}>
         {children}
       </div>
     </main>

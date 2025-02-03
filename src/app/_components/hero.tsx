@@ -1,43 +1,43 @@
 "use client"
 import { motion } from "motion/react"
 import { useEffect, useState } from "react"
-import { useWindowSize } from "@/hooks/useWindowSize"
+import { useWindowSize } from "@/hooks/use-window-size"
 
 export const Hero = () => {
   const windowSize = useWindowSize()
   const images = [
     {
-      key: "apple",
-      src: "/media/hero/apple.png",
-      className: "-translate-y-60",
-      width: 425,
-      height: 220,
-    },
-    {
-      key: "apple_tv",
+      key: "desktops",
       src: "/media/hero/apple_tv.png",
-      className: "translate-y-16",
+      desc: "the power house",
       width: 425,
       height: 220,
     },
     {
-      key: "keyboard",
-      src: "/media/hero/keyboard.png",
-      className: "translate-y-5",
-      width: 425,
-      height: 220,
-    },
-    {
-      key: "mac_mini",
+      key: "Mini PC's",
       src: "/media/hero/mac_mini.png",
-      className: "translate-y-12",
+      desc: "the power house",
       width: 425,
       height: 220,
     },
     {
-      key: "windows",
+      key: "Macbooks",
+      src: "/media/hero/apple.png",
+      desc: "the power house",
+      width: 425,
+      height: 220,
+    },
+    {
+      key: "Windows",
       src: "/media/hero/windows.png",
-      className: "translate-y-12",
+      desc: "the power house",
+      width: 425,
+      height: 220,
+    },
+    {
+      key: "Accessories ",
+      src: "/media/hero/keyboard.png",
+      desc: "the power house",
       width: 425,
       height: 220,
     },
@@ -45,12 +45,12 @@ export const Hero = () => {
 
   const [activeIndex, setActiveIndex] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % images.length)
-    }, 2000)
-    return () => clearInterval(interval)
-  }, [])
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prev) => (prev + 1) % images.length)
+  //   }, 2000)
+  //   return () => clearInterval(interval)
+  // }, [])
 
   const getPosition = (index: number) => {
     const position = (index - activeIndex + images.length) % images.length
@@ -63,7 +63,6 @@ export const Hero = () => {
 
     // Adjust for smaller screens
     if (screenWidth < 1024) {
-      baseX = screenWidth * 0.48
       baseY = screenHeight * 0.1
     }
 
@@ -72,7 +71,15 @@ export const Hero = () => {
       baseX = screenWidth * 0.48
       baseY = screenHeight * 0.2
     }
-    const centerYOffset = -screenHeight * 0.11 // How much center image moves up
+
+    let centerYOffset = -screenHeight * 0.07 // How much center image moves up
+
+    if (screenWidth < 1080) {
+      centerYOffset = screenHeight * 0.03
+    }
+    if (screenWidth > 1024) {
+      centerYOffset = -screenHeight * 0.115
+    }
 
     switch (position) {
       case 0: // Most left (bottom)
@@ -121,19 +128,19 @@ export const Hero = () => {
   }
 
   return (
-    <section className="flex flex-col items-center justify-center mt-10 h-full w-full">
-      <h1 className="font-orange whitespace-nowrap text-6xl select-none">
+    <section className="flex flex-col items-center justify-start mt-[5%] lg:mt-[7%] 2xl:mt-[4%] w-full h-full">
+      <h1 className="font-orange whitespace-nowrap text-4xl lg:text-6xl 2xl:text-7xl select-none">
         future of
       </h1>
-      <div className="relative flex flex-col items-center">
-        <h1 className="font-orange z-0 absolute text-9xl text-black text-stroke select-none">
+      <span className="relative flex flex-col items-center mt-[1%] lg:mt-[2%] 2xl:mt-[1.5%] font-orange text-6xl sm:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[13rem]">
+        <h1 className="z-0 absolute text-black text-stroke select-none">
           Refurbished
         </h1>
-        <h1 className="font-orange z-10 absolute text-9xl text-transparent text-stroke select-none">
+        <h1 className="z-10 absolute text-transparent text-stroke select-none">
           Refurbished
         </h1>
-      </div>
-      <div className="relative h-[40vh] -ml-96 w-full ">
+      </span>
+      <div className="relative h-[22vh] sm:h-[40vh]  lg:h-[75vh] 2xl:h-[80vh] flex items-start lg:items-center justify-center overflow-hidden w-full">
         {images.map((image, index) => {
           const position = getPosition(index)
 
@@ -151,21 +158,52 @@ export const Hero = () => {
                   duration: 0.5,
                 },
               }}
-              className={`absolute object-contain ${image.className}`}
+              className={`absolute object-contain`}
               src={image.src}
               alt={image.key}
               style={{
                 width: `${(image.width / 1440) * 100}vw`, // Responsive width
                 height: "auto",
                 maxWidth: image.width,
-                left: "50%",
-                top: "50%",
                 zIndex: position.zIndex,
               }}
             />
           )
         })}
       </div>
+      <button className="max-w-md w-fit px-5 font-gilroySemiBold h-9 text-sm justify-center items-center flex sm:hidden text-white bg-black ring-4 rounded-3xl ring-black/50">
+        <span>View All</span>
+      </button>
+      <div className="w-full h-full flex flex-col justify-center items-center">
+        <h3 className="font-orange text-2xl lg:text-4xl mt-5 lg:mt-1 mb-4 lg:mb-6">
+          Categories
+        </h3>
+        <div className="flex justify-start lg:justify-around items-center w-full h-full overflow-x-auto px-3">
+          {images.map((img) => (
+            <div
+              key={img.key}
+              className="bg-[#F0F7FF] cursor-pointer transition-all duration-200 hover:translate-y-4 mb-4 rounded-2xl mx-2 max-w-60 max-h-72 min-w-40 min-h-44 lg:w-60 lg:h-72 w-40 h-56 flex flex-col items-center justify-between"
+            >
+              <div className="max-w-56 max-h-56 min-w-36 min-h-36 lg:min-w-40 lg:min-h-40  flex items-center justify-center px-4 pt-6">
+                <img
+                  className="object-contain"
+                  src={img.src}
+                  alt={img.key}
+                  width={220}
+                  height={150}
+                />
+              </div>
+              <span className="flex flex-col items-center mb-3 lg:mb-4">
+                <h4 className="text-xl lg:text-3xl font-orange first-letter:uppercase">
+                  {img.key}
+                </h4>
+                <p className="font-gilroyMedium">{img.desc}</p>
+              </span>{" "}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="h-16 w-full pointer-events-none" />
     </section>
   )
 }

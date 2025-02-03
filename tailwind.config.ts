@@ -16,6 +16,9 @@ export default {
         gilroyBold: ["var(--font-gilroy-bold)", "sans-serif"],
         orange: ["var(--font-orange)", "sans-serif"],
       },
+      screens: {
+        xs: "480px",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
