@@ -5,7 +5,6 @@ import Brands from "./_components/brands/Brands"
 import { BestSellers } from "./_components/best-sellers/best-sellers"
 import { ImageComparison } from "./_components/img-comparison/img-comparison"
 import { WatchAndShop } from "./_components/watch-and-shop/watch-and-shop"
-import Footer from "./_components/footer/Footer"
 import { ImageCarousel } from "./_components/img-carousel/img-carousel"
 import { LatestRelease } from "./_components/latest-release/latest-release"
 import { BestDeals } from "./_components/best-deals/best-deals"
@@ -24,7 +23,6 @@ export default function Home() {
         <LatestRelease />
         <BestDeals />
         <div className="h-36 w-full" />
-        <Footer />
       </Container>
     </>
   )
