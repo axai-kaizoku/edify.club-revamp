@@ -52,8 +52,7 @@ const ProductCard = memo(
       router.refresh()
     }
     return (
-      <div className="lg:max-w-60 lg:max-h-80 lg:min-w-40 lg:min-h-40 lg:w-60 lg:h-80 w-[8.6rem] xs:w-36 xs:h-80 max-h-72 my-2 px-1 h-fit">
-        {/* <div className="h-[40vh] w-[5vw] lg:h-[53vh] lg:w-[17vw]"> */}
+      <div className="lg:max-w-60 lg:max-h-80 lg:min-w-40 lg:min-h-40 lg:w-60 lg:h-80 w-[8.6rem] xs:w-36 xs:h-80 max-h-72 my-2 px-1 h-fit mb-2 lg:mb-10">
         <div
           className="py-14 cursor-pointer relative px-2 w-full h-[20vh] lg:h-[78%] flex justify-center items-center  rounded-3xl lg:rounded-[1.8rem]"
           style={{ backgroundColor: imgBgColor }}
@@ -71,7 +70,7 @@ const ProductCard = memo(
                   : product?.images?.[0] ?? "/media/product-img/dell1.png"
               }
               alt="product"
-              className="w-32 h-32 lg:min-w-60 lg:w-60 lg:h-36 object-contain"
+              className="w-32 h-32 lg:min-w-40 lg:w-60 lg:h-36 object-contain"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             />
@@ -82,7 +81,7 @@ const ProductCard = memo(
 
         <div className="flex flex-col gap-0 pt-1.5 lg:pt-4 ">
           <div className="flex items-center lg:justify-between w-full px-2">
-            <h2 className="text-base lg:text-lg whitespace-nowrap font-gilroySemiBold">
+            <h2 className="text-base lg:text-lg whitespace-nowrap font-gilroySemiBold truncate">
               {product?.device_name.length > 16
                 ? product?.device_name.slice(0, 16) + "..."
                 : product?.device_name}{" "}
@@ -106,7 +105,7 @@ const ProductCard = memo(
           ) : null}
 
           <div className="flex items-center justify-between pr-1 lg:mt-3 px-2 my-1 lg:my-0">
-            <span className="text-base lg:text-xl  font-gilroyBold ">
+            <span className="text-[0.9rem] md:text-base lg:text-xl  font-gilroyBold ">
               ₹{product?.price}
             </span>
 
@@ -118,7 +117,7 @@ const ProductCard = memo(
               </div>
             </div>
 
-            <div className="hidden lg:flex h-8 w-24 bg-black cursor-pointer text-white font-gilroyMedium text-[10px] justify-center items-center mb-0.5 rounded-3xl gap-x-1">
+            <button className="hidden lg:flex h-fit w-fit py-1 px-1.5 xl:py-2 xl:px-2.5 whitespace-nowrap bg-black cursor-pointer text-white font-gilroyMedium text-[10px] justify-center items-center mb-0.5 rounded-3xl gap-x-1">
               <Cart
                 className="size-4"
                 onClick={(e) => {
@@ -127,10 +126,10 @@ const ProductCard = memo(
                 }}
               />
               Add to cart
-            </div>
+            </button>
           </div>
           {addToCart ? (
-            <div className="flex lg:hidden h-8 w-full bg-black cursor-pointer text-white font-gilroyMedium text-[10px] justify-center items-center mb-0.5 rounded-md gap-x-1">
+            <button className="flex lg:hidden h-7 xs:h-8 w-full bg-black cursor-pointer text-white font-gilroyMedium text-[10px] justify-center items-center mb-0.5 rounded-md gap-x-1">
               <Cart
                 className="size-4"
                 onClick={(e) => {
@@ -139,7 +138,7 @@ const ProductCard = memo(
                 }}
               />
               Add to cart
-            </div>
+            </button>
           ) : null}
         </div>
       </div>

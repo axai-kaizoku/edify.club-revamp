@@ -128,7 +128,7 @@ export const Hero = () => {
   }
 
   return (
-    <section className="flex flex-col items-center justify-start mt-[5%] lg:mt-[7%] 2xl:mt-[4%] w-full h-full">
+    <section className="flex flex-col items-center justify-start mt-[5%] lg:mt-[5%] 2xl:mt-[4%] w-full h-full">
       <h1 className="font-orange whitespace-nowrap text-4xl lg:text-6xl 2xl:text-7xl select-none">
         future of
       </h1>
@@ -174,8 +174,8 @@ export const Hero = () => {
       <button className="max-w-md w-fit px-5 font-gilroySemiBold h-9 text-sm justify-center items-center flex sm:hidden text-white bg-black ring-4 rounded-3xl ring-black/50">
         <span>View All</span>
       </button>
-      <div className="w-full h-full flex flex-col justify-center items-center">
-        <h3 className="font-orange text-2xl lg:text-4xl mt-5 lg:mt-1 mb-4 lg:mb-6">
+      <div className="w-full h-full flex flex-col justify-center items-center lg:px-6">
+        <h3 className="font-orange text-2xl lg:text-4xl mt-5 lg:mt-1 mb-4 lg:mb-12">
           Categories
         </h3>
         <div className="flex justify-start lg:justify-around items-center w-full h-full overflow-x-auto px-3">

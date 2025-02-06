@@ -8,9 +8,9 @@ import { ChevronLeft, ChevronRight } from "./icons"
 export const ImageComparison = () => {
   return (
     <section className="w-full h-full flex justify-center items-center my-1.5 lg:my-3">
-      <div className="w-[90%] h-full">
+      <div className="w-[95%] h-full">
         <Comparison
-          className=" aspect-video w-full rounded-lg border border-zinc-200 dark:border-zinc-800"
+          className=" aspect-video w-full rounded-[34.401px] border border-zinc-200 dark:border-zinc-800"
           // enableHover
           springOptions={{
             bounce: 0.3,

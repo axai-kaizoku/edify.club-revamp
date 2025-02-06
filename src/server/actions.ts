@@ -21,10 +21,9 @@ export async function fetchFooterLinks(
   try {
     const response = await axios.get(url)
     return response.data.footerByCategory
-  } catch (error) {
-    throw new Error(
-      `❌ Error fetching links for footer with slug ${slug}.`,
-      error
-    )
+  } catch (error: unknown) {
+    throw new Error(`❌ Error fetching links for footer with slug ${slug}.`, {
+      cause: error,
+    })
   }
 }

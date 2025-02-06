@@ -239,8 +239,8 @@ function CarouselIndicator({
             aria-label={`Go to slide ${i + 1}`}
             onClick={() => setIndex(i)}
             className={cn(
-              "h-2 w-2 rounded-full transition-opacity duration-300",
-              index === i ? "bg-zinc-950 w-6" : "bg-zinc-950",
+              "h-1.5 w-1.5 lg:h-2 lg:w-2 rounded-full transition-opacity duration-300",
+              index === i ? "bg-zinc-950 w-5 lg:w-6" : "bg-zinc-950",
               classNameButton
             )}
           />

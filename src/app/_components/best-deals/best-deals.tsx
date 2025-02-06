@@ -54,7 +54,7 @@ export const BestDeals = () => {
       </div>
 
       {/* Products Grid */}
-      <div className="w-full lg:w-[65%] p-2 lg:p-4 flex justify-around flex-wrap ">
+      <div className="w-full lg:w-[65%] p-2 lg:p-4 flex justify-around flex-wrap lg:flex-nowrap ">
         {[...modifiedData, modifiedData[0]].map((product, i) => (
           <ProductCard
             addToCart={false}

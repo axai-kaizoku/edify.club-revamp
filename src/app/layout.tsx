@@ -2,7 +2,9 @@ import "./globals.css"
 
 import type { Metadata } from "next"
 import { Header } from "@/components/common/header"
+import Footer from "@/components/common/footer"
 import localFont from "next/font/local"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Edify",
@@ -61,13 +63,12 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
         <ScreenSize />
       </body>
     </html>
   )
 }
-
-import Link from "next/link"
 
 export const ScreenSize = () => {
   return (

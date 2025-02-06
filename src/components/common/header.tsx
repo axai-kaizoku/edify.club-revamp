@@ -1,10 +1,22 @@
+"use client"
 import { ChevronDown, MoveUpRight } from "lucide-react"
 import { Input } from "../ui/input"
 import { Cart, CategoryIcon, HamBurger, Search } from "./icons"
+import { CategoryBanner } from "./category-banner"
+import { useState } from "react"
+import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
+      <CategoryBanner
+        className={cn(
+          isOpen ? "ranslate-y-[0%]" : "translate-y-[-100%]",
+          "transition-all duration-200 z-[11]"
+        )}
+      />
       <header className="fixed top-0 left-0 z-50 right-0 border-0 lg:border-b-2 bg-white font-gilroySemiBold border-[#E7E7E7] w-full h-16 lg:h-20 flex items-center justify-center">
         <nav className="flex w-[92%] sm:w-[94%] h-full justify-between items-center">
           <div className="block lg:hidden">
@@ -12,27 +24,34 @@ export const Header = () => {
           </div>
 
           <div className="lg:hidden -mr-[13%] sm:-mr-[7%] cursor-pointer bg-black/5 rounded-full size-12 font-orange text-4xl flex justify-center items-center">
-            e
+            <Link href="/">e</Link>
           </div>
 
-          <ul className=" hidden lg:flex items-center gap-x-6">
-            <li className="px-3 cursor-pointer bg-black/5 rounded-full size-12 font-orange text-4xl flex justify-center items-center">
-              e
+          <ul className="hidden lg:flex items-center md:gap-x-4 xl:gap-x-6 select-none">
+            <li className="px-3 cursor-pointer bg-black/5 rounded-full size-12 font-orange text-4xl flex justify-center items-center z-10">
+              <Link href="/">e</Link>
             </li>
 
-            <li className="flex items-center gap-2 px-3 py-1.5 cursor-pointer">
+            <li
+              onClick={() => setIsOpen((prev) => !prev)}
+              className={cn(
+                "flex items-center gap-2 px-3 py-1.5 cursor-pointer group hover:bg-slate-50 rounded-md z-10",
+                isOpen ? "bg-slate-50" : ""
+              )}
+            >
               <CategoryIcon /> Category{" "}
               <ChevronDown className="size-4 mt-0.5" strokeWidth={2.5} />
             </li>
-            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer">
+
+            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer z-10">
               Business{" "}
               <MoveUpRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:h-[100%] h-0 translate-y-[0%] group-hover:translate-y-100 group-hover:pt-0 pt-3 transition-all duration-200" />
             </li>
-            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer">
+            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer whitespace-nowrap z-10">
               About us{" "}
               <MoveUpRight className="size-4 opacity-0 group-hover:opacity-100" />
             </li>
-            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer">
+            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer z-10">
               Blogs{" "}
               <MoveUpRight className="size-4 opacity-0 group-hover:opacity-100" />
             </li>
@@ -54,7 +73,7 @@ export const Header = () => {
               </button>
             </li>
 
-            <li className="bg-black relative p-2 rounded-full size-9 flex justify-center items-center">
+            <li className="bg-black relative p-2 rounded-full size-9 flex justify-center items-center cursor-pointer">
               <div className="size-3.5 absolute -top-0.5 -right-1 rounded-full bg-[#0075EB] font-gilroyMedium text-white flex justify-center items-center text-[10px]">
                 2
               </div>

@@ -13,7 +13,7 @@ export function ImageCarousel() {
   ]
 
   return (
-    <div className="flex justify-center items-center my-3 lg:my-6">
+    <div className="flex justify-center items-center my-3 lg:my-10">
       <Carousel
         autoplay
         autoplayInterval={2500}
@@ -23,7 +23,7 @@ export function ImageCarousel() {
           {banners.map((banner, i) => (
             <CarouselItem
               key={`${banner}-${i}`}
-              className="flex justify-center px-3 lg:px-5"
+              className="flex justify-center px-3 lg:px-6"
             >
               <img
                 src={banner}

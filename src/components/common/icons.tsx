@@ -184,3 +184,29 @@ export const HeartIcon = (props: React.SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export const ArrowRight = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width={25}
+    height={25}
+    viewBox="0 0 25 25"
+    fill="none"
+  >
+    <path
+      d="M20.6133 12.3455H4.6133"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M15.6138 17.3457C15.6138 17.3457 20.6137 13.6633 20.6138 12.3457C20.6138 11.0281 15.6138 7.3457 15.6138 7.3457"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)

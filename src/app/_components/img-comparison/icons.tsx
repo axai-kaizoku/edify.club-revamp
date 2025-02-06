@@ -9,7 +9,7 @@ export const ChevronLeft = (props: React.SVGProps<SVGSVGElement>) => (
   >
     <path
       d="M6.32715 1.85767L1.73034 7.0652L6.32715 12.4588"
-      stroke="black"
+      stroke={props.color ?? "black"}
       strokeWidth="1.7806"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -28,7 +28,7 @@ export const ChevronRight = (props: React.SVGProps<SVGSVGElement>) => (
   >
     <path
       d="M1.08398 1.85767L5.68079 7.0652L1.08398 12.4588"
-      stroke="black"
+      stroke={props.color ?? "black"}
       strokeWidth="1.7806"
       strokeLinecap="round"
       strokeLinejoin="round"
