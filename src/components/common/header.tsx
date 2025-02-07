@@ -1,11 +1,12 @@
 "use client"
-import { ChevronDown, MoveUpRight } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import { Input } from "../ui/input"
-import { Cart, CategoryIcon, HamBurger, Search } from "./icons"
+import { ArrowUpRight, Cart, CategoryIcon, HamBurger, Search } from "./icons"
 import { CategoryBanner } from "./category-banner"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { MobileSearch } from "./mobile-search"
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,42 +36,56 @@ export const Header = () => {
             <li
               onClick={() => setIsOpen((prev) => !prev)}
               className={cn(
-                "flex items-center gap-2 px-3 py-1.5 cursor-pointer group hover:bg-slate-50 rounded-md z-10",
+                "flex items-center gap-x-2 px-3 py-1.5 cursor-pointer group hover:bg-slate-50 rounded-md z-10",
                 isOpen ? "bg-slate-50" : ""
               )}
             >
               <CategoryIcon /> Category{" "}
-              <ChevronDown className="size-4 mt-0.5" strokeWidth={2.5} />
+              <div className="relative h-3.5 w-4">
+                <ChevronDown
+                  className="absolute size-4 inset-0 translate-y-[0%] opacity-100 group-hover:translate-y-[100%] group-hover:opacity-0 transition duration-200"
+                  strokeWidth={2.5}
+                />
+                <ChevronDown
+                  className="absolute size-4 inset-0 translate-y-[-100%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition duration-200"
+                  strokeWidth={2.5}
+                />
+              </div>
             </li>
 
             <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer z-10">
               Business{" "}
-              <MoveUpRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:h-[100%] h-0 translate-y-[0%] group-hover:translate-y-100 group-hover:pt-0 pt-3 transition-all duration-200" />
+              <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
             </li>
+
             <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer whitespace-nowrap z-10">
               About us{" "}
-              <MoveUpRight className="size-4 opacity-0 group-hover:opacity-100" />
+              <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
             </li>
             <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer z-10">
               Blogs{" "}
-              <MoveUpRight className="size-4 opacity-0 group-hover:opacity-100" />
+              <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
             </li>
           </ul>
 
           <ul className="flex items-center gap-2 lg:gap-3">
-            <li className="group relative w-full">
+            <li className="group hidden lg:block relative w-full">
               <Input
                 id="search"
                 type="text"
                 placeholder="Search anything"
-                className="hidden lg:block rounded-3xl w-80 bg-[#F0F0F0] placeholder:text-[#C5C5C5] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                className="rounded-3xl w-80 bg-[#F0F0F0] placeholder:text-[#C5C5C5] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
               />
               <button
                 type="button"
-                className="lg:absolute lg:right-2 lg:top-1 text-sm size-9 lg:size-8 bg-black rounded-full flex items-center justify-center"
+                className="absolute right-2 top-1 text-sm size-8 bg-black rounded-full flex items-center justify-center"
               >
                 <Search />
               </button>
+            </li>
+
+            <li className="group block lg:hidden relative w-full">
+              <MobileSearch />
             </li>
 
             <li className="bg-black relative p-2 rounded-full size-9 flex justify-center items-center cursor-pointer">

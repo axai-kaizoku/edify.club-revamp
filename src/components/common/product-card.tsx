@@ -69,6 +69,7 @@ const ProductCard = memo(
                   ? "/media/product-img/dell2.png"
                   : product?.images?.[0] ?? "/media/product-img/dell1.png"
               }
+              loading="lazy"
               alt="product"
               className="w-32 h-32 lg:min-w-40 lg:w-60 lg:h-36 object-contain"
               onMouseEnter={handleMouseEnter}
