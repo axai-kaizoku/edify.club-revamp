@@ -1,10 +1,6 @@
 import { Input } from "../ui/input"
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogTrigger,
-} from "../ui/old-dialog"
+import { Dialog, DialogContent, DialogTrigger } from "../ui/old-dialog"
+import { DialogTitle } from "../ui/dialog"
 import { Search } from "./icons"
 
 export const MobileSearch = () => {
