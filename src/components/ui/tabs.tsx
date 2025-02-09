@@ -3,9 +3,21 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
+/**
+ * Tabs Component
+ * Can be used as both a controlled and uncontrolled component.
+ *
+ * Controlled: Use `value` and `onValueChange` props.
+ * Uncontrolled: Use `defaultValue`.
+ */
 type TabsProps = {
   className?: string
-  defaultValue: string
+  /** The active tab value (for controlled mode) */
+  value?: string
+  /** The default active tab value (for uncontrolled mode) */
+  defaultValue?: string
+  /** Callback when the tab value changes */
+  onValueChange?: (value: string) => void
   children: React.ReactNode
 }
 
@@ -32,8 +44,22 @@ type TabsContentProps = {
 }
 
 // Tabs Component
-const Tabs = ({ defaultValue, children, className }: TabsProps) => {
-  const [activeTab, setActiveTab] = React.useState<string>(defaultValue)
+const Tabs = ({
+  children,
+  className,
+  value,
+  defaultValue,
+  onValueChange,
+}: TabsProps) => {
+  const isControlled = value !== undefined
+  const [internalActiveTab, setInternalActiveTab] = React.useState<string>(
+    defaultValue ?? ""
+  )
+  const activeTab = isControlled ? value : internalActiveTab
+  const setActiveTab = (newValue: string) => {
+    if (!isControlled) setInternalActiveTab(newValue)
+    onValueChange?.(newValue)
+  }
 
   return (
     <div className={className}>
@@ -98,8 +124,9 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
         role="tab"
         aria-selected={isActive}
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium outline-offset-2 transition-all hover:text-muted-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium outline-offset-2 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50",
           isActive && "bg-background text-foreground shadow-sm shadow-black/5",
+          !isActive && "hover:text-muted-foreground",
           className
         )}
         onClick={() => setActiveTab?.(value)}
