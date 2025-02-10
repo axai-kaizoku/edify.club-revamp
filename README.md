@@ -4,3 +4,5 @@
 - [ ] Product Page
 - [ ] Orders
 - [ ] Order Detail page
+- [ ] Cart + Checkout
+- [ ] B2B
