@@ -159,14 +159,14 @@ export const OrderIcons = {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="Component 26">
-        <g clip-path="url(#clip0_696_7710)">
+        <g clipPath="url(#clip0_696_7710)">
           <path
             id="Vector 196"
             d="M23.6797 27.2607L19.0829 22.0532L23.6797 16.6596"
             stroke="black"
-            stroke-width="1.7806"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.7806"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
         <rect
