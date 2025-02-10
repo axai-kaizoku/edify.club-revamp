@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        xxs: "0.625rem", // 10px in rem
+      },
       fontFamily: {
         gilroyRegular: ["var(--font-gilroy-regular)", "sans-serif"],
         gilroyMedium: ["var(--font-gilroy-medium)", "sans-serif"],

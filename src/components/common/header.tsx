@@ -20,56 +20,84 @@ export const Header = () => {
       />
       <header className="fixed top-0 left-0 z-50 right-0 border-0 lg:border-b-2 bg-white font-gilroySemiBold border-[#E7E7E7] w-full h-16 lg:h-20 flex items-center justify-center">
         <nav className="flex w-[92%] sm:w-[94%] h-full justify-between items-center">
-          <div className="block lg:hidden">
+          <button className="block lg:hidden" aria-label="Open Menu">
             <HamBurger />
-          </div>
+          </button>
 
           <div className="lg:hidden -mr-[13%] sm:-mr-[7%] cursor-pointer bg-black/5 rounded-full size-12 font-orange text-4xl flex justify-center items-center">
             <Link href="/">e</Link>
           </div>
 
           <ul className="hidden lg:flex items-center md:gap-x-4 xl:gap-x-6 select-none">
-            <li className="px-3 cursor-pointer bg-black/5 rounded-full size-12 font-orange text-4xl flex justify-center items-center z-10">
-              <Link href="/">e</Link>
+            <li>
+              <Link
+                href="/"
+                className="px-3 bg-black/5 rounded-full size-12 font-orange text-4xl flex justify-center items-center"
+                aria-label="Home"
+              >
+                e
+              </Link>
             </li>
 
-            <li
-              onClick={() => setIsOpen((prev) => !prev)}
-              className={cn(
-                "flex items-center gap-x-2 px-3 py-1.5 cursor-pointer group hover:bg-slate-50 rounded-md z-10",
-                isOpen ? "bg-slate-50" : ""
-              )}
-            >
-              <CategoryIcon /> Category{" "}
-              <div className="relative h-3.5 w-4">
-                <ChevronDown
-                  className="absolute size-4 inset-0 translate-y-[0%] opacity-100 group-hover:translate-y-[100%] group-hover:opacity-0 transition duration-200"
-                  strokeWidth={2.5}
-                />
-                <ChevronDown
-                  className="absolute size-4 inset-0 translate-y-[-100%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition duration-200"
-                  strokeWidth={2.5}
-                />
-              </div>
+            <li>
+              <button
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={cn(
+                  "flex items-center gap-x-2 px-3 py-1.5 cursor-pointer group hover:bg-slate-50 rounded-md",
+                  isOpen ? "bg-slate-50" : ""
+                )}
+                aria-expanded={isOpen}
+                aria-controls="category-menu"
+              >
+                <CategoryIcon /> Category{" "}
+                <div className="relative h-3.5 w-4">
+                  <ChevronDown
+                    className="absolute size-4 inset-0 translate-y-[0%] opacity-100 group-hover:translate-y-[100%] group-hover:opacity-0 transition duration-200"
+                    strokeWidth={2.5}
+                  />
+                  <ChevronDown
+                    className="absolute size-4 inset-0 translate-y-[-100%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition duration-200"
+                    strokeWidth={2.5}
+                  />
+                </div>
+              </button>
             </li>
 
-            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer z-10">
-              Business{" "}
-              <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
+            <li>
+              <Link
+                className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer"
+                href="#"
+              >
+                Business{" "}
+                <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
+              </Link>
             </li>
 
-            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer whitespace-nowrap z-10">
-              About us{" "}
-              <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
+            <li>
+              <Link
+                className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer whitespace-nowrap z-10"
+                href="#"
+              >
+                About us{" "}
+                <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
+              </Link>
             </li>
-            <li className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer z-10">
-              Blogs{" "}
-              <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
+            <li>
+              <Link
+                className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer z-10"
+                href="#"
+              >
+                Blogs{" "}
+                <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
+              </Link>
             </li>
           </ul>
 
           <ul className="flex items-center gap-2 lg:gap-3">
             <li className="group hidden lg:block relative w-full">
+              <label htmlFor="search" className="sr-only">
+                Search
+              </label>
               <Input
                 id="search"
                 type="text"
@@ -79,20 +107,26 @@ export const Header = () => {
               <button
                 type="button"
                 className="absolute right-2 top-1 text-sm size-8 bg-black rounded-full flex items-center justify-center"
+                aria-label="Search"
               >
                 <Search />
               </button>
             </li>
 
-            <li className="group block lg:hidden relative w-full">
+            <li className="block lg:hidden relative w-full">
               <MobileSearch />
             </li>
 
-            <li className="bg-black relative p-2 rounded-full size-9 flex justify-center items-center cursor-pointer">
-              <div className="size-3.5 absolute -top-0.5 -right-1 rounded-full bg-[#0075EB] font-gilroyMedium text-white flex justify-center items-center text-[10px]">
-                2
-              </div>
-              <Cart className="size-6" />
+            <li>
+              <button
+                className="bg-black relative p-2 rounded-full size-9 flex justify-center items-center cursor-pointer"
+                aria-label="View Cart"
+              >
+                <span className="size-3.5 absolute -top-0.5 -right-1 rounded-full bg-[#0075EB] font-gilroyMedium text-white flex justify-center items-center text-[10px]">
+                  2
+                </span>
+                <Cart className="size-6" />
+              </button>
             </li>
           </ul>
         </nav>

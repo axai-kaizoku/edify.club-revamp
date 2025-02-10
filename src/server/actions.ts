@@ -1,10 +1,12 @@
 import axios from "axios"
+
 export type FooterCategory = {
   categoryTitle: string
   categoryValue: string
   pages: FooterPage[]
   sortOrder: number
 }
+
 export type FooterPage = {
   first_title_name: {
     text: string
@@ -14,6 +16,7 @@ export type FooterPage = {
   }
   slug: string
 }
+
 export async function fetchFooterLinks(
   slug: string = "refurbished-laptops-delhi"
 ): Promise<FooterCategory[]> {
