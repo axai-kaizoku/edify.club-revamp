@@ -63,7 +63,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
         <ScreenSize />
       </body>
     </html>

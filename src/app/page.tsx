@@ -12,7 +12,7 @@ import { ExploreProducts } from "./_components/exp-products/exp-products"
 import Refurbishment from "./_components/refurbishment/refurbishment"
 import { TopPicks } from "./_components/top-picks/top-picks"
 import Testimonials from "./_components/testimonials/testimonials"
-import { Brands } from "./_components/brands/brands-biro"
+import { Brands } from "./_components/brands/brands"
 
 export default function Home() {
   return (
