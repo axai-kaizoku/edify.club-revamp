@@ -5,6 +5,7 @@ import { Header } from "@/components/common/header"
 import Footer from "@/components/common/footer"
 import localFont from "next/font/local"
 import Link from "next/link"
+import { Providers } from "@/lib/providers"
 
 export const metadata: Metadata = {
   title: "Edify",
@@ -61,10 +62,12 @@ export default function RootLayout({
           ${orange.variable}
       antialiased h-full min-h-screen w-full`}
       >
-        <Header />
-        {children}
-        <Footer />
-        <ScreenSize />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+          <ScreenSize />
+        </Providers>
       </body>
     </html>
   )
