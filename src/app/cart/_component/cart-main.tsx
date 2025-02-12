@@ -9,7 +9,7 @@ const CartMain = () => {
   const router = useRouter();
   return (
     <>
-      <Container className="flex flex-col mt-2 gap-6">
+      <Container className="flex flex-col mt-2 gap-6 sm:hidden">
         <div className="flex items-center">
           <CartIcons.back_icon />
           <p className="font-gilroySemiBold text-xl flex-grow text-center pr-9 text-black">

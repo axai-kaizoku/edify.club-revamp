@@ -6,7 +6,7 @@ const ProductSection = () => {
   return (
     <>
       {products.map((product, index) => (
-        <section className="flex flex-col" key={index}>
+        <section className="flex flex-col sm:hidden" key={index}>
           <div className="flex flex-row gap-2">
             <div className="bg-[#F7F8FA] py-5 px-1 rounded-[6px]">
               <img
@@ -36,7 +36,7 @@ const ProductSection = () => {
                     <Plus />
                   </div>
                 </div>
-                <h1 className="text-black font-gilroyBold text-xl">$146.00</h1>
+                <h1 className="text-black font-gilroyBold text-lg">$146.00</h1>
               </div>
             </div>
           </div>

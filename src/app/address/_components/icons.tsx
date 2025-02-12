@@ -28,7 +28,7 @@ export const AddressIcons = {
         />
       </g>
     </svg>
-  ),
+  )
 }
 
 export default AddressIcons

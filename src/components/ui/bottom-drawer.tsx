@@ -34,7 +34,7 @@ const Drawer : React.FC<DrawerProps> = ({ isOpen, onClose, title, children }) =>
         if (info.point.y > 600) onClose()
       }}
       className="fixed bottom-0 left-0 w-full z-50 bg-white rounded-t-[30px] pb-2 shadow-2xl shadow-slate-700"
-      style={{ height: `${drawerHeight}px` }}
+      style={{ height: `${drawerHeight+12}px` }}
       ref={drawerRef}
     >
       {/* Drag Handle */}
