@@ -42,6 +42,46 @@ export const CartIcons = {
       </defs>
     </svg>
   ),
+  laptop_back_icon: (props: LucideProps) => (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="44"
+      height="44"
+      viewBox="0 0 44 44"
+      fill="none"
+    >
+      <g clipPath="url(#clip0_646_22833)">
+        <path
+          d="M23.8283 27.0691L19.2314 21.8615L23.8283 16.4679"
+          stroke="black"
+          strokeWidth="1.7806"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <rect
+        x="0.5"
+        y="-0.5"
+        width="42.5373"
+        height="42.5373"
+        rx="21.2686"
+        transform="matrix(1 0 0 -1 0.231445 42.5371)"
+        stroke="#C9C9C9"
+      />
+      <defs>
+        <clipPath id="clip0_646_22833">
+          <rect
+            width="43.5373"
+            height="43.5373"
+            rx="21.7686"
+            transform="matrix(1 0 0 -1 0.231445 43.5371)"
+            fill="white"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  ),
   coupon_icon: (props: LucideProps) => (
     <svg
       {...props}

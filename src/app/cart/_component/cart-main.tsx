@@ -54,6 +54,26 @@ const CartMain = () => {
 
         <button type="button" onClick={()=>{router.push('/cart/checkout')}} className="bg-black text-white text-sm font-gilroySemiBold text-center py-3 tracking-[0.091px] rounded-[8px] -mt-2 mb-2">CheckOut</button>
       </Container>
+
+      <section className="flex">
+        <div className="w-[60%] bg-[#F7F8FA] h-full">
+          <div className="flex flex-col gap-5 mt-6">
+            <div className="flex gap-4 items-center lg:mx-10 md:mx-8 sm:mx-4 max-sm:hidden">
+              <CartIcons.laptop_back_icon className="cursor-pointer" />
+              <div className="font-gilroySemiBold text-black text-2xl 2xl:text-3xl">
+                Cart<span className="text-sm 2xl:text-base text-[#A2A3B1] font-gilroySemiBold ml-2">2 Items</span>
+              </div>
+            </div>
+
+            <section className="w-full mx-auto">
+              <ProductSection/>
+            </section>
+
+            
+          </div>
+        </div>
+        <div className="w-[40%] bg-white"></div>
+      </section>
     </>
   )
 }
