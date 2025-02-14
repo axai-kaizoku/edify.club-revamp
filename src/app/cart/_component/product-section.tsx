@@ -1,15 +1,20 @@
+"use client"
 import { Minus, Plus } from "lucide-react"
+import { usePathname, useRouter } from "next/navigation"
 import React from "react"
 
 const ProductSection = () => {
-  const products = [1, 2, 3]
+  const products = [1, 2]
+  const pathname = usePathname()
+
+  const type = pathname.includes("address") && "address"
+
   return (
     <>
       {products.map((product, index) => (
         <React.Fragment key={index}>
           {/* MOBILE VIEW  */}
 
-          
           <section className="flex flex-col sm:hidden" key={index}>
             <div className="flex flex-row gap-2">
               <div className="bg-[#F7F8FA] py-5 px-1 rounded-[6px]">
@@ -51,7 +56,9 @@ const ProductSection = () => {
           {/* WEB VIEW */}
 
           <section
-            className="flex bg-white px-4 py-3 rounded-2xl gap-5 w-[78%] max-sm:hidden"
+            className={`flex bg-white px-4 py-3 rounded-2xl gap-5 sm:w-[90%] md:w-[85%] lg:w-[78%] max-sm:hidden ${
+              type === "address" && "lg:w-full md:w-full sm:w-full"
+            }`}
             key={product}
           >
             <div className="bg-[#F7F8FA] rounded-[8.59px] px-2 py-3 flex justify-center items-center">
@@ -82,9 +89,9 @@ const ProductSection = () => {
                 <span className="text-[#AFAFAF] font-gilroyMedium text-xs leading-[23.87px]">
                   Black
                 </span>
-                <span className="text-xs absolute right-0 font-gilroySemiBold text-[#2E8016] px-3 py-1.5 mt-1 rounded-[13.92px] bg-[#E0F9E7]">
+                {type !== "address" && (<span className="text-xs absolute right-0 font-gilroySemiBold text-[#2E8016] px-3 md:-mt-2 sm:-mt-3 lg:mt-1 py-1.5 mt-1 rounded-[13.92px] bg-[#E0F9E7]">
                   In-Stock
-                </span>
+                </span>)}
               </p>
 
               <p className="text-xs font-gilroyMedium text-[#AFAFAF] flex gap-1">
@@ -95,13 +102,21 @@ const ProductSection = () => {
                 <span>i5 5th Gen</span>
               </p>
 
-              <div className="w-fit mt-2">
-                <div className="flex items-center border border-[#A2A3B1] rounded-[2.592px] px-3 py-1 gap-5">
-                  <Minus className="cursor-pointer"/>
-                  <span className="font-gilroySemiBold text-[#17183B]">1</span>
-                  <Plus className="cursor-pointer"/>
+              {type !== "address" ? (
+                <div className="w-fit mt-2">
+                  <div className="flex items-center border border-[#A2A3B1] rounded-[2.592px] px-3 py-1 gap-5">
+                    <Minus className="cursor-pointer" />
+                    <span className="font-gilroySemiBold text-[#17183B]">
+                      1
+                    </span>
+                    <Plus className="cursor-pointer" />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <span className="text-xs w-fit right-0 font-gilroySemiBold text-[#2E8016] px-3  py-1.5 mt-1 rounded-[13.92px] bg-[#E0F9E7]">
+                  In-Stock
+                </span>
+              )}
             </div>
           </section>
         </React.Fragment>

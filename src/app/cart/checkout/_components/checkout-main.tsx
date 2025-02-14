@@ -8,18 +8,10 @@ import StoreProductIcons from "@/app/products/[id]/_components/store-icons"
 import { motion } from "framer-motion"
 import Drawer from "@/components/ui/bottom-drawer"
 
-const CheckoutMain = () => {
-  const router = useRouter()
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  // const [drawerHeight, setDrawerHeight] = useState(0)
-  // const drawerRef = useRef<HTMLDivElement | null>(null)
 
-  // Get content height dynamically
-  // useEffect(() => {
-  //   if (drawerRef.current) {
-  //     setDrawerHeight(drawerRef.current.scrollHeight)
-  //   }
-  // }, [isDrawerOpen])
+const CheckoutMain = () => {
+  const router = useRouter();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   return (
     <>
@@ -47,7 +39,7 @@ const CheckoutMain = () => {
             <span
               className="text-sm font-gilroyMedium underline"
               onClick={() => {
-                router.push("/address")
+                router.push("/cart/checkout/address")
               }}
             >
               Change
@@ -203,6 +195,10 @@ const CheckoutMain = () => {
         </div>
 
       </Container>
+
+      {/* WEB VIEW  */}
+
+      
     </>
   )
 }
