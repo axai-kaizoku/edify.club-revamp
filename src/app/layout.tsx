@@ -77,7 +77,9 @@ export const ScreenSize = () => {
   return (
     <div className="fixed bottom-4 bg-muted right-4 z-[1000] flex h-12 w-12 items-center justify-center rounded-3xl ring-1 ring-muted-foreground font-gilroySemiBold">
       <Link href="/">
-        <div className="block sm:hidden">sm</div>
+        <div className="block xs:hidden">xs</div>
+        {/* Extra Small screens (smaller than 480px) */}
+        <div className="hidden xs:block sm:hidden">sm</div>
         {/* Small screens (smaller than 640px) */}
         <div className="hidden sm:block md:hidden">md</div>
         {/* Medium screens (640px - 768px) */}
