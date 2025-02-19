@@ -69,6 +69,7 @@ export const OrdersSection = () => {
             </p>
           ) : null}
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full h-[70dvh] overflow-y-auto p-1">
+
             {isLoading
               ? Array(5)
                   .fill("a")

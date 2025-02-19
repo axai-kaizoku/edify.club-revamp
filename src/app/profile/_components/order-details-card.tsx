@@ -61,7 +61,7 @@ export const OrderDetailsCard = ({ order }: { order: Order }) => (
       </div>
 
       <Link
-        href="#"
+        href="/order/234"
         className="bg-black text-white px-4 lg:px-3.5 py-2 lg:py-0.5 rounded-3xl flex justify-center items-center text-xs font-gilroySemiBold"
       >
         <span>View Details</span>

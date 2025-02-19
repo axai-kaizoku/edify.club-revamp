@@ -52,10 +52,7 @@ const ProductCard = memo(
       router.refresh()
     }
     return (
-      <div
-        onClick={() => router.push("/products/987afhahasdjf")}
-        className="lg:max-w-60 lg:max-h-80 lg:min-w-40 lg:min-h-40 lg:w-60 lg:h-80 w-[8.6rem] xs:w-36 xs:h-80 max-h-72 my-2 px-1 h-fit mb-2 lg:mb-10"
-      >
+      <div className="lg:max-w-60 lg:max-h-80 lg:min-w-40 lg:min-h-40 lg:w-60 lg:h-80 w-[8.6rem] xs:w-36 xs:h-80 max-h-72 my-2 px-1 h-fit mb-2 lg:mb-10">
         <div
           className="py-14 cursor-pointer relative px-2 w-full h-[20vh] lg:h-[78%] flex justify-center items-center  rounded-3xl lg:rounded-[1.8rem]"
           style={{ backgroundColor: imgBgColor }}

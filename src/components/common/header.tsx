@@ -65,11 +65,12 @@ export const Header = () => {
 
             <li>
               <Link
-                className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer"
-                href="#"
+
+                className="flex items-center gap-2 group hover:bg-slate-50 px-3 py-1.5 rounded-md cursor-pointer z-10"
+                href="/b2b"
               >
                 Business{" "}
-                <ArrowUpRight className="size-4 pt-4 group-hover:pt-0 translate-y-[20%] translate-x-[-90%] group-hover:translate-x-[0%] group-hover:translate-y-[0%] transition-all duration-200" />
+                <MoveUpRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:h-[100%] h-0 translate-y-[0%] group-hover:translate-y-100 group-hover:pt-0 pt-3 transition-all duration-200" />
               </Link>
             </li>
 
