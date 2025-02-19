@@ -113,6 +113,7 @@ const ImageComparisonImage = ({
     <motion.img
       src={src}
       alt={alt}
+      loading="lazy"
       className={cn("absolute inset-0 h-full w-full object-cover", className)}
       style={{
         clipPath: position === "left" ? leftClipPath : rightClipPath,

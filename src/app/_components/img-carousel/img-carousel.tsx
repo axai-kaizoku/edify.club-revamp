@@ -28,6 +28,7 @@ export function ImageCarousel() {
               <img
                 src={banner}
                 alt={`banner-${i}`}
+                loading="lazy"
                 className="object-contain w-full h-full"
               />
             </CarouselItem>
