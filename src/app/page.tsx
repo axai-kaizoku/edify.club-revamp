@@ -32,7 +32,6 @@ export default function Home() {
         <Refurbishment />
         <Blogs />
         <Testimonials />
-        <div className="h-36 w-full" />
       </Container>
     </>
   )
