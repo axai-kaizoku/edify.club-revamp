@@ -3,11 +3,11 @@ import MoreLinks from "./more-links"
 
 const Footer = () => {
   return (
-    <div className="w-full bg-[#efefef] items-center justify-center h-[100vh] overflow-auto">
+    <div className="w-full bg-[#efefef] items-center justify-center h-[100vh] mt-16 overflow-auto">
       {/* add relative positioning to the main conent */}
-      {/*<div className="relative h-screen bg-red-200 w-full z-10 text-2xl md:text-7xl font-bold uppercase flex justify-center items-center bg-primaryRed text-white whitespace-pre">
+      <div className="relative hidden h-screen bg-red-200 w-full z-10 text-2xl md:text-7xl font-bold uppercase justify-center items-center bg-primaryRed text-white whitespace-pre">
         Scroll down ↓
-      </div> */}
+      </div>
 
       {/* Sticky footer. The only important thing here is the z-index, the sticky position and the bottom value */}
       <div className="sticky z-0  bottom-0 left-0 w-full  bg-black text-white flex flex-col justify-end  items-center">

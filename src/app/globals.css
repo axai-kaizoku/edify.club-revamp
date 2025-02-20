@@ -66,9 +66,6 @@ html {
   * {
     @apply border-border;
   }
-  *:focus-visible {
-    @apply outline-none outline-black;
-  }
   body {
     @apply bg-background text-foreground;
   }

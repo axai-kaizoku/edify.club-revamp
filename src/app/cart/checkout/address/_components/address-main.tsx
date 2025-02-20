@@ -83,6 +83,7 @@ const AddressMain = () => {
 
   return (
     <>
+      {/* MOBILE View */}
       <Container className="flex flex-col my-2 gap-6 sm:hidden">
         <div className="flex items-center">
           <CartIcons.back_icon

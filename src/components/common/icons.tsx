@@ -2,9 +2,9 @@ export const CategoryIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
-    width={16}
-    height={16}
-    viewBox="0 0 16 16"
+    width="16"
+    height="15"
+    viewBox="0 0 16 15"
     fill="none"
   >
     <path
@@ -30,32 +30,6 @@ export const CategoryIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export const ArrowUpRight = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    width={24}
-    height={24}
-    color={"#000000"}
-    fill={"none"}
-    {...props}
-  >
-    <path
-      d="M16.5 7.5L6 18"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-    />
-    <path
-      d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-)
-
 export const Search = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
@@ -68,14 +42,14 @@ export const Search = (props: React.SVGProps<SVGSVGElement>) => (
     <g clipPath="url(#clip0_409_579)">
       <path
         d="M10.2007 10.4258L12.8224 13.0475"
-        stroke={props.color ?? "white"}
+        stroke="white"
         strokeWidth="0.972267"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M11.6569 6.63899C11.6569 3.7431 9.30932 1.39551 6.41341 1.39551C3.51751 1.39551 1.16992 3.7431 1.16992 6.63899C1.16992 9.53491 3.51751 11.8825 6.41341 11.8825C9.30932 11.8825 11.6569 9.53491 11.6569 6.63899Z"
-        stroke={props.color ?? "white"}
+        stroke="white"
         strokeWidth="0.972267"
         strokeLinejoin="round"
       />
@@ -85,7 +59,7 @@ export const Search = (props: React.SVGProps<SVGSVGElement>) => (
         <rect
           width="13.9826"
           height="13.9826"
-          fill={props.color ?? "white"}
+          fill="white"
           transform="translate(0.00488281 0.230225)"
         />
       </clipPath>
