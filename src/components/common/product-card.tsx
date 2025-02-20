@@ -56,6 +56,7 @@ const ProductCard = memo(
         <div
           className="py-14 cursor-pointer relative px-2 w-full h-[20vh] lg:h-[78%] flex justify-center items-center  rounded-3xl lg:rounded-[1.8rem]"
           style={{ backgroundColor: imgBgColor }}
+          onClick={() => router.push("/products/345")}
         >
           <div className="w-full h-[15%] absolute top-[4%] flex justify-between items-center px-[4%]">
             <NewBadge />
