@@ -47,7 +47,8 @@ export const FilterOption = ({
       <div
         key={option}
         onClick={() => onSelect(option)}
-        className={`border lg:border-2 font-gilroySemiBold border-[#D7D7D7] lg:text-base text-xs text-[#D7D7D7] px-1 py-0.5  lg:p-2 w-fit rounded lg:rounded-lg cursor-pointer hover:border-[#2E8016] hover:border lg:hover:border-2 hover:text-black ${
+        className={`border lg:border-2 font-gilroySemiBold border-[#D7D7D7] lg:text-base text-sm text-[#D7D7D7] px-1 py-0.5  lg:p-2 w-fit rounded lg:rounded-lg cursor-pointer hover:border-[#2E8016] hover:border lg:hover:border-2 hover:text-black ${
+
           selected === option ? "border-green-700 text-black" : ""
         }`}
       >
@@ -122,18 +123,18 @@ function AllProducts() {
         <div className="w-full flex gap-8">
           {/* LEFT SECTION */}
 
-          <div className="sm:w-[30%] w-full h-fit bg-[#F7F7F7] hidden flex-col gap-3 lg:gap-4 rounded-xl lg:rounded-3xl p-2 lg:p-4 shadow-md sm:flex">
-            <AllProductsLeft
-              clearAllFilters={clearAllFilters}
-              colors={colors}
-              processorOptions={processorOptions}
-              displayOptions={displayOptions}
-              storageOptions={storageOptions}
-              ramOptions={ramOptions}
-              handleFilterChange={handleFilterChange}
-              selectedFilters={selectedFilters}
-            />
-          </div>
+          <AllProductsLeft
+            clearAllFilters={clearAllFilters}
+            colors={colors}
+            processorOptions={processorOptions}
+            displayOptions={displayOptions}
+            storageOptions={storageOptions}
+            ramOptions={ramOptions}
+            handleFilterChange={handleFilterChange}
+            selectedFilters={selectedFilters}
+            className="sm:w-[30%] sm:flex hidden"
+          />
+
 
           {/* RIGHT SECTION */}
           <div className="w-[70%] flex flex-col gap-3 relative max-sm:w-full">
@@ -225,6 +226,8 @@ function AllProducts() {
                 onClose={() => {
                   setFilterDrawer(false)
                 }}
+                className="bg-[#F7F7F7]"
+
               >
                 <AllProductsLeft
                   clearAllFilters={clearAllFilters}
@@ -235,6 +238,9 @@ function AllProducts() {
                   ramOptions={ramOptions}
                   handleFilterChange={handleFilterChange}
                   selectedFilters={selectedFilters}
+
+                  className="sm:hidden w-full flex"
+
                 />
               </Drawer>
             )}
@@ -245,6 +251,8 @@ function AllProducts() {
                 onClose={() => {
                   setSortDrawer(false)
                 }}
+                className="bg-white"
+
               >
                 <div>
                   {sortingOptions.map((option) => (

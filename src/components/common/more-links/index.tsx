@@ -3,7 +3,7 @@ import { fetchFooterLinks } from "@/server/actions"
 
 export default async function MoreLinks({ slug }: { slug?: string }) {
   try {
-    const footerData = await fetchFooterLinks(slug)
+    const footerData = await fetchFooterLinks(slug);
 
     return (
       <div className="flex flex-col gap-4">

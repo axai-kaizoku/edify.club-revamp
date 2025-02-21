@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { cn } from "@/lib/utils" // Adjust the import path based on where `cn` is defined
+
 import { FilterOption, FilterSection } from "../page"
 import { AllProductsIcons } from "../icons"
 import { PriceSlider } from "./price-slider"
@@ -18,6 +20,8 @@ interface AllProductsLeftSection {
   processorOptions: string[]
   handleFilterChange: (key: string, value: string) => void
   displayOptions: string[]
+  className?: string // Allowing custom className prop
+
 }
 
 function AllProductsLeft({
@@ -29,16 +33,26 @@ function AllProductsLeft({
   processorOptions,
   handleFilterChange,
   displayOptions,
+  className, // Accepting custom styles
 }: AllProductsLeftSection) {
   const [selectBrand, setSelectBrand] = useState<number | null>(null)
-
   return (
-    <>
+    <div
+      className={cn(
+        "w-full h-fit bg-[#F7F7F7] flex-col gap-3 lg:gap-4 rounded-xl lg:rounded-3xl p-2 lg:p-4 ",
+        className
+      )}
+    >
+
       <div className="flex justify-between items-center px-5">
         <p className="text-base lg:text-2xl font-gilroyMedium">Filters</p>
         <p
           className="text-sm lg:text-base text-[#828282] font-gilroyMedium cursor-pointer"
-          onClick={clearAllFilters}
+
+          onClick={() => {
+            clearAllFilters();
+            setSelectBrand(null)
+          }}
         >
           Clear All
         </p>
@@ -130,7 +144,8 @@ function AllProductsLeft({
           onSelect={(value) => handleFilterChange("display", value)}
         />
       </FilterSection>
-    </>
+    </div>
+
   )
 }
 

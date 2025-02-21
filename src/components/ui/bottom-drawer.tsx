@@ -2,12 +2,14 @@
 
 import React, { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
+import { cn } from "@/lib/utils";
 
 export interface DrawerProps {
   isOpen: boolean
   onClose: () => void
   title?: string
   children: React.ReactNode
+  className: string
 }
 
 const Drawer: React.FC<DrawerProps> = ({
@@ -15,15 +17,10 @@ const Drawer: React.FC<DrawerProps> = ({
   onClose,
   title,
   children,
+  className
 }) => {
-  const [drawerHeight, setDrawerHeight] = useState(0)
-  const drawerRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    if (drawerRef.current) {
-      setDrawerHeight(drawerRef.current.scrollHeight)
-    }
-  }, [isOpen])
+  const drawerRef = useRef<HTMLDivElement>(null)
 
   if (!isOpen) return null
 
@@ -38,8 +35,9 @@ const Drawer: React.FC<DrawerProps> = ({
       onDragEnd={(event, info) => {
         if (info.point.y > 600) onClose()
       }}
-      className="fixed bottom-0 left-0 w-full z-50 bg-white rounded-t-[30px] pb-2 shadow-2xl shadow-slate-700"
-      style={{ height: `${drawerHeight + 12}px` }}
+      className={cn(`fixed bottom-0 left-0 w-full z-50 rounded-t-[30px] pb-2 shadow-2xl shadow-slate-700 
+                 max-h-[80vh] overflow-hidden`, className)}
+
       ref={drawerRef}
     >
       {/* Drag Handle */}
@@ -47,8 +45,10 @@ const Drawer: React.FC<DrawerProps> = ({
         <div className="w-10 h-1 bg-[#858585] rounded-full"></div>
       </div>
 
-      {/* Drawer Content */}
-      <div className="w-full px-4 pb-4 overflow-y-auto">
+
+      {/* Drawer Content - Scrollable */}
+      <div className="w-full px-4 pb-4 overflow-y-auto max-h-[calc(80vh-50px)]">
+
         {title && (
           <p className="text-black text-lg text-center font-gilroySemiBold">
             {title}

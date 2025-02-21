@@ -3,7 +3,7 @@ import MoreLinks from "./more-links"
 
 const Footer = () => {
   return (
-    <div className="w-full bg-[#efefef] items-center justify-center h-fit mt-16 overflow-auto">
+    <div className="w-full bg-[#efefef] items-center justify-center h-[100vh] mt-16 overflow-auto">
       {/* add relative positioning to the main conent */}
       <div className="relative hidden h-screen bg-red-200 w-full z-10 text-2xl md:text-7xl font-bold uppercase justify-center items-center bg-primaryRed text-white whitespace-pre">
         Scroll down ↓
@@ -74,18 +74,18 @@ const Footer = () => {
               <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
                 Terms of service
               </h2>
-              <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
+              <a href={'/shipping-policy'} className="font-gilroySemiBold text-xs lg:text-sm xl:text-base cursor-pointer hover:underline">
                 Shipping Policy
-              </h2>
-              <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
+              </a>
+              <a href={'/return-policy'} className="font-gilroySemiBold text-xs lg:text-sm xl:text-base cursor-pointer hover:underline">
                 Return Policy
-              </h2>
-              <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
+              </a>
+              <a href={'/warranty-policy'} className="font-gilroySemiBold text-xs lg:text-sm xl:text-base cursor-pointer hover:underline">
                 Warranty Policy
-              </h2>
-              <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
+              </a>
+              <a href={'/privacy-policy'} className="font-gilroySemiBold text-xs lg:text-sm xl:text-base cursor-pointer hover:underline">
                 Privacy Policy
-              </h2>
+              </a>
             </div>
             <div className="md:hidden flex justify-center gap-16 items-center">
               <div className="flex flex-col gap-2">
@@ -115,18 +115,18 @@ const Footer = () => {
                 <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
                   Terms of service
                 </h2>
-                <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
+                <a href={"/shipping-policy"} className="font-gilroySemiBold text-xs lg:text-sm xl:text-base cursor-pointer hover:underline">
                   Shipping Policy
-                </h2>
-                <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
+                </a>
+                <a href={"/return-policy"} className="font-gilroySemiBold text-xs lg:text-sm xl:text-base cursor-pointer hover:underline">
                   Return Policy
-                </h2>
-                <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
+                </a>
+                <a href={"/warranty-policy"} className="font-gilroySemiBold text-xs lg:text-sm xl:text-base cursor-pointer hover:underline">
                   Warranty Policy
-                </h2>
-                <h2 className="font-gilroySemiBold text-xs lg:text-sm xl:text-base">
+                </a>
+                <a href={"/privacy-policy"} className="font-gilroySemiBold text-xs lg:text-sm xl:text-base cursor-pointer hover:underline">
                   Privacy Policy
-                </h2>
+                </a>
               </div>
             </div>
           </div>

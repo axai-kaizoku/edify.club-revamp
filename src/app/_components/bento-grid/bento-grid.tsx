@@ -9,6 +9,7 @@ import {
   Protection,
   Star,
 } from "./icons"
+import { OrbitingCirclesSection } from "@/app/about-us/_components/orbiting-circles-section"
 
 function BentoGrid() {
   return (
@@ -18,21 +19,32 @@ function BentoGrid() {
         {/* Left Side */}
         <div className="w-[40%] flex flex-col sm:gap-4 xl:gap-6">
           {/* upper block */}
-          <div className="bg-[#F8F8F8] rounded-[31px] pl-10 pt-5">
-            <p className="font-gilroySemiBold sm:text-sm lg:text-base xl:text-lg">
-              Trusted by
-            </p>
-            <h1 className="font-gilroySemiBold sm:text-4xl lg:text-6xl xl:text-7xl">
-              50+
-            </h1>
-            <p className="xl:text-xl/6 font-gilroySemiBold sm:text-base/4 lg:text-lg/4">
-              StartUp
-              <br /> Founders
-            </p>
-            <div className="py-6 sm:py-4">
-              <Hand_heart className="size-8" />
+          <div className="bg-[#F8F8F8] rounded-[31px] pl-10 pt-5 flex sm:gap-8 overflow-hidden relative">
+            <div>
+              <p className="font-gilroySemiBold sm:text-sm lg:text-base xl:text-lg">
+                Trusted by
+              </p>
+              <h1 className="font-gilroySemiBold sm:text-4xl lg:text-6xl xl:text-7xl">
+                50+
+              </h1>
+              <p className="xl:text-xl/6 font-gilroySemiBold sm:text-base/4 lg:text-lg/4">
+                StartUp
+                <br /> Founders
+              </p>
+              
+              <div className="py-6 sm:py-4 relative z-20">
+                <Hand_heart className="size-8" />
+              </div>
             </div>
+
+            <div className="flex-grow">
+              <OrbitingCirclesSection className="sm:h-[180%] w-[500px]" />
+            </div>
+
+            {/* Bottom Gradient Overlay with Lower z-index */}
+            <div className="absolute bottom-0 left-0 w-full h-16 z-10 before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(185deg,rgba(217,217,217,0)_10.53%,#F5F5F5_79.57%)]"></div>
           </div>
+
           {/* below block */}
           <div className="flex  items-center xl:gap-8 sm:gap-4 ">
             <div className="flex w-[40%]   bg-[url(/media/brento/carbon.svg)] xl:p-8 sm:p-4 lg:p-6  rounded-[19px]  bg-cover bg-no-repeat bg-center justify-center items-center  flex-col h-fit">

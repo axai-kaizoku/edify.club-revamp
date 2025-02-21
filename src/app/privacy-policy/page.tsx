@@ -3,28 +3,28 @@ import { privacyPolicyInfo } from "@/constants"
 import { PrivacyPolicyInfoProps } from "@/types"
 import { siteConfigPrivacyPolicy } from "@/config/site"
 
-export const metadata: Metadata = {
-  title: siteConfigPrivacyPolicy.name,
-  description: siteConfigPrivacyPolicy.description,
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfigPrivacyPolicy.url,
-    title: siteConfigPrivacyPolicy.name,
-    description: siteConfigPrivacyPolicy.description,
-    siteName: siteConfigPrivacyPolicy.name,
-    images: `${siteConfigPrivacyPolicy.url}/og_main.png`,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfigPrivacyPolicy.name,
-    description: siteConfigPrivacyPolicy.description,
-    images: `${siteConfigPrivacyPolicy.url}/og_main.png`,
-  },
-  icons: {
-    icon: "/logo.png",
-  },
-}
+// export const metadata: Metadata = {
+//   title: siteConfigPrivacyPolicy.name,
+//   description: siteConfigPrivacyPolicy.description,
+//   openGraph: {
+//     type: "website",
+//     locale: "en_US",
+//     url: siteConfigPrivacyPolicy.url,
+//     title: siteConfigPrivacyPolicy.name,
+//     description: siteConfigPrivacyPolicy.description,
+//     siteName: siteConfigPrivacyPolicy.name,
+//     images: `${siteConfigPrivacyPolicy.url}/og_main.png`,
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: siteConfigPrivacyPolicy.name,
+//     description: siteConfigPrivacyPolicy.description,
+//     images: `${siteConfigPrivacyPolicy.url}/og_main.png`,
+//   },
+//   icons: {
+//     icon: "/logo.png",
+//   },
+// }
 
 export default function PrivacyPolicy() {
   const privacyPolicy: PrivacyPolicyInfoProps = privacyPolicyInfo
